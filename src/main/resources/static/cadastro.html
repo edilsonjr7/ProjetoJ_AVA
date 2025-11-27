@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Loja Eletrônica</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header>
+        <h1>Loja Eletrônica</h1> 
+        <nav>
+            <a href="admin.html">Área Admin</a> 
+        </nav>
+        <div class="cart-icon" style="visibility: hidden;">🛒</div> 
+    </header>
+
+    <main>
+        <div class="form-page-wrapper">
+            
+            <div class="login-container">
+                <form class="login-form" id="cadastroForm">
+                    <p class="heading">Crie sua Conta</p>
+                    <p class="paragraph">Preencha seus dados para se cadastrar</p>
+                    
+                    <div class="input-group">
+                        <input
+                            required=""
+                            placeholder="Nome Completo"
+                            id="nome"
+                            type="text"
+                            name="nome"
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <input
+                            required=""
+                            placeholder="E-mail"
+                            id="email"
+                            type="email"
+                            name="email"
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <input
+                            required=""
+                            placeholder="Senha (Mínimo 6 caracteres)"
+                            id="senha"
+                            type="password"
+                            name="senha"
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <input
+                            required=""
+                            placeholder="Endereço de Entrega (Rua, Número, Cidade)"
+                            id="endereco"
+                            type="text"
+                            name="endereco"
+                        />
+                    </div>
+                    
+                    <div class="input-group" style="align-items: flex-start; margin-bottom: 25px;">
+                        <label style="color: rgb(33, 32, 32); font-weight: 400; display:flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" id="is-admin" style="width: auto; height: 18px; margin: 0; box-shadow: none;"> 
+                            Sou Administrador (Libera cadastro de produto)
+                        </label>
+                    </div>
+                    
+                    <button type="submit">Cadastrar Usuario</button>
+                    
+                    <div class="bottom-text">
+                        <p><a href="index.html">Voltar para home</a></p>
+                        <div id="cadastro-message"></div>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
