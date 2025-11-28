@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Eletrônica - Catálogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 style="display:flex; align-items:center;">
+            Loja Eletrônica
+    
+        </h1>
+    <nav>
+     
+    
+    <div id="user-actions">
+        <a href="admin.html" id="nav-login-btn" onclick="showModal('login-modal')">Área Admin</a>
+        <a href="cadastro.html" id="nav-create-account">Criar Conta</a>
+        <a href="#" id="nav-logout-btn" onclick="logout()" style="display:none;">Logout</a>
+    </div>
+</nav>
+        
+        <div class="cart-icon" id="open-cart-modal" onclick="showModal('cart-modal')">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <main>
+        
+        <section id="produtos">
+            <h2 style="color: var(--primary);">Produtos em Destaque</h2>
+            <p style="color: var(--muted-foreground);">Navegue por nossa seleção de eletrônicos de ponta!</p>
+            
+            <div class="product-grid" id="product-list-container">
+                <p>Carregando produtos...</p>
+            </div>
+        </section>
+
+    </main>
+    
+  
+    
+   
+    <div id="login-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('login-modal')">&times;</span>
+        <h3>Login (Simulado)</h3>
+        <p>Use **admin** ou **cliente** como usuário para simular o acesso.</p>
+        <form id="form-login" style="margin-top: 20px;">
+            <input type="text" id="login-user" placeholder="Usuário (admin/cliente)" required>
+            <input type="password" placeholder="Senha (qualquer valor)" required>
+            <button type="submit" style="margin-top: 15px;">Entrar</button>
+            <p id="login-status" style="margin-top: 10px;"></p>
+        </form>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+/* =================================================================
+   1. Definições de Cores e Variáveis
+   ================================================================= */
+
+:root {
+    --color-white: #ffffff;
+    --color-action: #00b4d8; /* Azul Claro para botões e destaque */
+    --color-secondary: #5c677d; /* Cinza Médio */
+    
+    /* Mapeamento Semântico */
+    --background: var(--color-white);
+    --foreground: #1c212b; 
+    --primary: var(--color-action);
+    --primary-foreground: var(--color-white); 
+    --muted-foreground: var(--color-secondary);
+    --border: rgba(92, 103, 125, 0.1); /* Borda mais sutil */
+    --input-background: #f3f3f5; /* Cinza super claro para inputs */
+    --radius: 0.625rem;
+    --accent: #f8f9fa; /* Fundo levemente cinza para seções */
+    --destructive: #cc0000;
+    --font-weight-medium: 600; /* Aumentando para melhor leitura de títulos */
+}
+
+/* =================================================================
+   2. Estilos Base da Aplicação
+   ================================================================= */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--accent); /* Fundo sutilmente cinza */
+    color: var(--foreground);
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-weight: var(--font-weight-medium);
+    color: var(--foreground);
+}
+
+/* Container Principal */
+main {
+    max-width: 1200px; /* Alargando o container principal */
+    margin: 20px auto;
+    padding: 30px; /* Padding maior */
+    background: var(--background);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sombra mais destacada */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* =================================================================
+   3. Cabeçalho e Navegação (Estilo Flutuante e Alinhado)
+   ================================================================= */
+
+header {
+    background-color: var(--color-white); 
+    color: var(--foreground);
+    padding: 15px 40px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para efeito flutuante */
+    margin-bottom: 30px;
+    
+    /* Layout com Logo/Status, Navegação, e Ícone de Ação */
+    display: grid;
+    grid-template-columns: auto 1fr auto; 
+    align-items: center;
+    gap: 30px;
+}
+
+header h1 {
+    color: var(--primary); 
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+/* Status de Conexão (Movido para dentro do H1 para o visual) */
+#status-message {
+    font-weight: 500;
+    color: var(--foreground);
+    background-color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+nav {
+    text-align: right; 
+    margin-right: 20px;
+}
+
+nav a {
+    color: var(--foreground);
+    margin: 0 12px;
+    font-weight: 500;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+/* Ícone do Carrinho Destacado */
+.cart-icon {
+    /* Estilo de botão redondo e cor secundária para contraste */
+    background-color: var(--color-secondary); 
+    color: var(--color-white);
+    padding: 14px 18px;
+    border-radius: var(--radius); /* Retangular, não mais circular */
+    font-size: 1.1em;
+    position: relative; /* Para o contador */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* =================================================================
+   4. Formulários (Design do Card de Cadastro)
+   ================================================================= */
+
+section {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    background-color: var(--color-white); /* Fundo branco puro nas seções */
+}
+
+/* Input Group para centralizar e melhorar a leitura do formulário */
+.input-group label {
+    font-weight: 500;
+    color: var(--foreground);
+}
+
+input {
+    border: 1px solid var(--border);
+    background-color: var(--input-background);
+    padding: 12px;
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--primary); 
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* =================================================================
+   5. Produtos (Cards Atrativos)
+   ================================================================= */
+
+.product-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--border);
+    background-color: var(--color-white);
+    text-align: center;
+    padding-bottom: 15px; /* Mais espaço na parte inferior */
+}
+
+.product-card:hover {
+    transform: translateY(-8px); /* Efeito de elevação mais notável */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); 
+}
+
+.product-card img {
+    height: 250px; /* Aumenta o destaque da imagem */
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.product-price {
+    font-size: 1.8em; /* Preço maior para destaque */
+    color: var(--foreground); /* Preto para leitura sólida */
+    font-weight: 700;
+    margin: 5px 0;
+}
+.product-price::before {
+    content: "R$ ";
+}
+
+/* Badge de Novidade (Estilo da Imagem) */
+.badge {
+    background-color: var(--primary); 
+    color: var(--primary-foreground);
+    padding: 6px 12px;
+    border-radius: 0 0 var(--radius) 0; /* Estilo mais moderno, só arredondado em baixo */
+    font-size: 0.9em;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* =================================================================
+   6. Carrinho e Modal (Design Aprimorado)
+   ================================================================= */
+
+#cart-table th {
+    background-color: var(--accent);
+    color: var(--foreground);
+}
+
+#cart-table button {
+    background-color: var(--destructive); 
+    width: auto;
+    font-weight: 500;
+}
